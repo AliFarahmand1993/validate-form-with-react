@@ -56,13 +56,16 @@ function App() {
   }
   console.log(values)
   return (
-    <section className="flex items-center justify-center h-screen	">
-      <form onSubmit={handleSubmit}>
-        {inputs.map((input) => (
-          <FormInput key={input.id} {...input} value={values[input.name]} onChange={onChange} />
-        ))}
-        <button>Submit</button>
-      </form>
+    <section className="h-full bg-gradient-to-r from-violet-500 to-fuchsia-500">
+      <div className="flex items-center justify-center h-screen ">
+        <form onSubmit={handleSubmit} className="bg-white py-0 px-16 rounded-xl text-lg font-semibold">
+          {inputs.map((input) => (
+            <FormInput key={input.id} {...input} value={values[input.name]} onChange={onChange} />
+          ))}
+          <button className="w-full h-auto p-3 bg-indigo-600 rounded-md font-semibold text-xl text-white
+          cursor-pointer mt-3 mb-4 hover:bg-indigo-900 hover:text-black transition ">Submit</button>
+        </form>
+      </div>
     </section>
   );
 }
